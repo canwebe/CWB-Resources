@@ -1,0 +1,161 @@
+/* Variables */
+:root {
+  /* Height */
+  --full-height: 100svh;
+
+  /* Your Colors and other variables*/
+  --brand-hue: 240; /* You can add secondary by chnaging hue */
+  --brand-saturation: 60%;
+  --brand-lightness: 52%;
+
+  --brand-color-100: hsl(var(--brand-hue) var(--brand-saturation) 92%);
+  --brand-color-500: hsl(
+    var(--brand-hue) var(--brand-saturation) var(--brand-lightness)
+  );
+  --brand-color-900: hsl(var(--brand-hue) 100% 12%);
+
+  --text-color-1: var(--brand-color-900);
+  --surface-color-1: var(--brand-color-100);
+}
+
+/* Fallback for browsers that do not support 100svh */
+@supports not (height: 100dvh) {
+  :root {
+    --full-height: 100vh;
+  }
+}
+
+/*
+   Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+   Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%; /* For 1rem =10px setup */
+  /*   If You have fixed nav */
+  /*    scroll-padding-top: 9rem;  */
+}
+
+/*
+  Typographic tweaks!
+  Add accessible line-height
+  Improve text rendering
+*/
+body {
+  line-height: 1.5; /* As Required */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  font-size: 1.6rem; /* Because we set the base font size to 62.5% */
+}
+
+/* We can also setup each element by own */
+/* h1 {
+  font-size: 3.1rem;
+}
+
+p {
+  font-size: 1.6rem;
+} */
+
+/*
+  Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  For root stacking
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Extra */
+/* I like to start from new */
+/* button,
+input,
+select,
+textarea {
+  border: none;
+  outline: none;
+}
+
+button {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+button > * {
+  flex-shrink: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+} */
+
+/* Your Utility Classes like flex, centering, text wrap etc 👇*/
