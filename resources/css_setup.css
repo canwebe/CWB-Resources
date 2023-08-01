@@ -140,6 +140,11 @@ textarea {
   outline: none;
 }
 
+button,
+a{
+  cursor:pointer;
+}
+
 button {
   background-color: transparent;
   display: flex;
